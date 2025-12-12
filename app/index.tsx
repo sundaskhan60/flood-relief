@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from './components/Button';
 import Header from './components/Header';
 import HeroImage from './components/HeroImage';
 import WelcomeText from './components/WelcomeText';
@@ -14,7 +15,8 @@ export default function Index() {
       <View className="flex-1">
         <Header />
         <HeroImage />
-       < WelcomeText/>
+        <WelcomeText />
+        <Button />
       </View>
     </SafeAreaView>
   );

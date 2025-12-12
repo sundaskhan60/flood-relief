@@ -5,7 +5,7 @@ import { Text, View } from 'react-native';
 const Header = () => {
   return (
     <LinearGradient
-      colors={['#33B3FF', '#0040B0']} // bottom now matches HeroImage top
+      colors={['#33B3FF', '#33B3FF']} // bottom now matches HeroImage top
       className="h-64 pt-12 pb-20 w-full items-center"
     >
       <Text className="text-white text-4xl font-bold">RAPID</Text>

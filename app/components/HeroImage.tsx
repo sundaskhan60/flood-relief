@@ -1,29 +1,24 @@
 import React from "react";
 import { View, Image } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 
-const Boat = require("./boat1.png"); // <-- use require for PNG
+const Boat = require("./boat1.png");
 
 const HeroImage = () => {
   return (
-    <LinearGradient
-      colors={["#33B3FF", "#0040B0"]}
-      className="items-center justify-center w-full py-20"
-    >
+    <View className="w-full items-center justify-center bg-[#0A46FF] py-10">
       <View className="relative w-full items-center justify-center">
-        {/* Boat image positioned higher */}
         <Image
           source={Boat}
           style={{
             width: 200,
             height: 100,
             position: "absolute",
-            top: -100, // moved more upwards
+            top: -70,
           }}
           resizeMode="contain"
         />
       </View>
-    </LinearGradient>
+    </View>
   );
 };
 
