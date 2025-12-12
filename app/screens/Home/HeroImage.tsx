@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { Image, View } from "react-native";
 
 const Boat = require("./boat1.png");
 
 const HeroImage = () => {
   return (
-    <View className="w-full items-center justify-center bg-[#0A46FF] py-10">
+    <View className="w-full items-center justify-center bg-[#0A46FF] py-20">
       <View className="relative w-full items-center justify-center">
         <Image
           source={Boat}
