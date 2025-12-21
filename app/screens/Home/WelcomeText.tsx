@@ -1,14 +1,25 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text, View } from "react-native";
 
-const WelcomeText = () => {
+interface WelcomeTextProps {
+  title?: string;
+  subtitle?: string;
+  className?: string; // Defined in the interface
+}
+
+const WelcomeText: React.FC<WelcomeTextProps> = ({
+  title = "Welcome Aboard",
+  subtitle = "Get started with your journey",
+  className = "py-10", // Default value if no className is passed
+}) => {
   return (
-    <View className="w-full py-10 items-center justify-center bg-[#0A46FF]">
+    // We use the className variable inside the string
+    <View className={`w-full items-center justify-center bg-[#0A46FF] ${className}`}>
       <Text className="text-white text-4xl font-light mb-2">
-        Welcome Aboard
+        {title}
       </Text>
       <Text className="text-white text-sm font-light">
-        Get started with your journey
+        {subtitle}
       </Text>
     </View>
   );

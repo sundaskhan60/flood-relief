@@ -1,20 +1,23 @@
+import { useRouter } from "expo-router";
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { SafeAreaView } from "react-native-safe-area-context";
-
-
 import Header from './Header';
 import HeroImage from './HeroImage';
-import WelcomeText from './WelcomeText';
 import HomeButton from './HomeButton';
+import WelcomeText from './WelcomeText';
 
 const HomeScreen = () => {
+  const router = useRouter();
+
   return (
     <ScrollView className="flex-1 bg-white">
       <Header />
       <HeroImage />
       <WelcomeText />
-    <HomeButton/>
+
+      <HomeButton
+        onLogin={() => router.push("/Login")} 
+      />
     </ScrollView>
   );
 };
