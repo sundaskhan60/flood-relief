@@ -10,7 +10,7 @@ interface HomeButtonProps {
 
 const HomeButton: React.FC<HomeButtonProps> = ({ onLogin, onSignUp }) => {
   return (
-    <View className="flex-1 w-full bg-[#0A46FF] items-center justify-end pb-10">
+    <View className="flex-1 w-full bg-[#1A4BCC] items-center justify-end pb-10">
       {/* Login Button */}
       <Button title="Login" onPress={onLogin} />
 

@@ -28,7 +28,7 @@ const HeroImage = () => {
   }, []);
 
   return (
-    <View className="w-full items-center justify-center bg-[#0A46FF] py-20">
+    <View className="w-full items-center justify-center bg-[#1A4BCC] py-20">
       <View className="relative w-full items-center justify-center">
         <Animated.Image
           source={Boat}

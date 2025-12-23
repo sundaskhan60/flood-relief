@@ -14,7 +14,7 @@ const WelcomeText: React.FC<WelcomeTextProps> = ({
 }) => {
   return (
     // We use the className variable inside the string
-    <View className={`w-full items-center justify-center bg-[#0A46FF] ${className}`}>
+    <View className={`w-full items-center justify-center bg-[#1A4BCC] ${className}`}>
       <Text className="text-white text-4xl font-light mb-2">
         {title}
       </Text>

@@ -17,6 +17,7 @@ const HomeScreen = () => {
 
       <HomeButton
         onLogin={() => router.push("/Login")} 
+        onSignUp={() => router.push("/SignUp")}
       />
     </ScrollView>
   );

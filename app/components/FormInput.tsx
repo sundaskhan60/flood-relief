@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text, TextInput } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import React from "react";
+import { Text, TextInput, View } from "react-native";
 
 type IconType = "ion" | "material";
 
@@ -10,6 +10,9 @@ interface FormInputProps {
   iconName: any;
   iconType?: IconType;
   secureTextEntry?: boolean;
+  keyboardType?: "default" | "email-address" | "phone-pad" | "numeric";
+  value?: string;           // Made optional with ?
+  onChangeText?: (text: string) => void; // Made optional with ?
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -18,9 +21,11 @@ const FormInput: React.FC<FormInputProps> = ({
   iconName,
   iconType = "ion",
   secureTextEntry = false,
+  keyboardType = "default",
+  value,
+  onChangeText,
 }) => {
-  const Icon =
-    iconType === "material" ? MaterialIcons : Ionicons;
+  const Icon = iconType === "material" ? MaterialIcons : Ionicons;
 
   return (
     <View className="mb-5">
@@ -32,10 +37,13 @@ const FormInput: React.FC<FormInputProps> = ({
       </View>
 
       <TextInput
-        className="bg-[#eef2fb] rounded-xl px-4 py-4 text-gray-800 text-base"
+        className="bg-[#eef2fb] rounded-xl px-4 py-3 text-gray-800 text-base" // py-3 reduces height
         placeholder={placeholder}
         placeholderTextColor="#9ca3af"
         secureTextEntry={secureTextEntry}
+        keyboardType={keyboardType}
+        value={value}
+        onChangeText={onChangeText}
       />
     </View>
   );
