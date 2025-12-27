@@ -33,15 +33,16 @@ const LogF = () => {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        activeOpacity={0.7}
-        className="w-full py-4 rounded-2xl border border-white items-center justify-center bg-transparent"
-        onPress={() => console.log("Login Pressed")}
-      >
-        <Text className="text-white text-lg font-semibold">
-          Log In
-        </Text>
-      </TouchableOpacity>
+      {/* Log In Button */}
+<TouchableOpacity
+  activeOpacity={0.7}
+  className="w-full py-4 rounded-2xl border border-white items-center justify-center bg-transparent mt-6"
+  onPress={() => router.push("/drawer/dashboard")} // Updated Route
+>
+  <Text className="text-white text-lg font-semibold">
+    Log In
+  </Text>
+</TouchableOpacity>
 
     </View>
   );
