@@ -8,9 +8,28 @@ import MovementStatus from './Movementstatus';
 import Emergency from './Emergency';
 import UserLocation from './UserLocation';
 import SafetyTips from './SafetyTips';
-
+import MapScreen from '../livemap/MapScreen'; 
+import AlertsScreen from '../Alert/AlertScreen'; // 1. Import AlertsScreen
+import SettingsScreen from '../settings/SettingScreen';
 const DashboardScreen = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('Dashboard');
+
+  // Shared navigation handler
+  const handleNavigate = (name: string) => setActiveTab(name);
+
+  // 2. Logic for Map
+  if (activeTab === 'Map') {
+    return <MapScreen onNavigate={handleNavigate} />;
+  }
+
+  // 3. Logic for Alerts (same as Map)
+  if (activeTab === 'Alerts') {
+    return <AlertsScreen onNavigate={handleNavigate} />;
+  }
+  if (activeTab === 'Settings') {
+    return <SettingsScreen onNavigate={handleNavigate} />;
+  }
 
   return (
     <View className="flex-1 bg-white">
@@ -23,22 +42,20 @@ const DashboardScreen = () => {
       >
         <View className="px-5">
           <Welcome />
-        <Floodstatus />
-          
-          {/* 2. Replace the placeholder with the new component */}
-         <MovementStatus/>
-
-          {/* Next is the Emergency Assistance card */}
-         {/* 2. Call the Emergency component */}
-  <Emergency />
-
-<UserLocation />
-
-<SafetyTips />
+          <Floodstatus />
+          <MovementStatus />
+          <Emergency />
+          <UserLocation />
+          <SafetyTips />
         </View>
       </ScrollView>
 
-      <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <Sidebar 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)} 
+        onNavigate={handleNavigate}
+        currentScreen="Dashboard"
+      />
     </View>
   );
 };
